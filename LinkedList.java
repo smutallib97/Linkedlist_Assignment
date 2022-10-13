@@ -45,6 +45,16 @@ public class LinkedList<T> {
         }
 
     }
+    public void append(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+    }
     public static void main(String[] args) {
         LinkedList<Integer> list1 = new LinkedList();
         list1.push(70);
@@ -52,10 +62,18 @@ public class LinkedList<T> {
         list1.push(56);
         list1.show();
         // UC2 - Adding 30 and 56 to 70 by using add()
+        System.out.println("By Using Add() Linked list is: ");
         LinkedList<Integer> list2 = new LinkedList<>();
         list2.add(56);
         list2.add(30);
         list2.add(70);
         list2.show();
+        //UC3 - Create Linkedlist by appending 30 and 70 to 56
+        System.out.println("By using append() Linked list is: ");
+        LinkedList<Integer>list3 = new LinkedList<>();
+        list3.append(56);
+        list3.append(30);
+        list3.append(70);
+        list3.show();
     }
 }
