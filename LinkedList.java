@@ -55,6 +55,20 @@ public class LinkedList<T> {
             tail = newNode;
         }
     }
+    //UC4 - Ability to insert 30 between 56 and 70
+    public void insert(T data) {
+        Node<T> newNode = new Node<>(data);
+        if (head == null) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            Node<T> temp, current;
+            current = head;
+            temp = head.next;
+            current.next = newNode;
+            newNode.next = temp;
+        }
+    }
     public static void main(String[] args) {
         LinkedList<Integer> list1 = new LinkedList();
         list1.push(70);
@@ -75,5 +89,13 @@ public class LinkedList<T> {
         list3.append(30);
         list3.append(70);
         list3.show();
+
+        //UC4 - Ability to insert 30 between 56 nd 70
+        System.out.println("Inserting 30 between 56 and 70 Linked list is: ");
+        LinkedList<Integer>list4 = new LinkedList<>();
+        list4.insert(56);
+        list4.insert(70);
+        list4.insert(30);
+        list4.show();
     }
 }
