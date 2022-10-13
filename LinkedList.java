@@ -79,6 +79,21 @@ public class LinkedList<T> {
             return data;
         }
     }
+    //UC6 - Ability to Delete Last Element
+    public T popLast() {
+        if (head == null) {
+            return null;
+        } else {
+            Node<T> temp = head;
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            T data = tail.data;
+            temp.next = null;
+            tail = temp;
+            return data;
+        }
+    }
     public static void main(String[] args) {
         LinkedList<Integer> list1 = new LinkedList();
         list1.push(70);
@@ -115,5 +130,13 @@ public class LinkedList<T> {
             System.out.println("Popped the first element -> "+popFirstElement);
         }
         list1.show();
+        //UC6 - Ability to Delete last Element
+        Integer popLastElement = list3.popLast();
+        if (popLastElement == null) {
+            System.out.println("Linked List Empty");
+        } else {
+            System.out.println("Popped the last element -> "+popLastElement);
+        }
+        list3.show();
     }
 }
