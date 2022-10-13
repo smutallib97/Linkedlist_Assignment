@@ -51,6 +51,11 @@ public class LinkedList<T> {
         list1.push(30);
         list1.push(56);
         list1.show();
-
+        // UC2 - Adding 30 and 56 to 70 by using add()
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.add(56);
+        list2.add(30);
+        list2.add(70);
+        list2.show();
     }
 }
