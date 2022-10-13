@@ -69,6 +69,16 @@ public class LinkedList<T> {
             newNode.next = temp;
         }
     }
+    //UC5 - Ability to Delete First Element
+    public T popFirst() {
+        if (head == null) {
+            return null;
+        } else {
+            T data = head.data;
+            head = head.next;
+            return data;
+        }
+    }
     public static void main(String[] args) {
         LinkedList<Integer> list1 = new LinkedList();
         list1.push(70);
@@ -97,5 +107,13 @@ public class LinkedList<T> {
         list4.insert(70);
         list4.insert(30);
         list4.show();
+        //UC5 - Ability to Delete First Element
+        Integer popFirstElement = list1.popFirst();
+        if (popFirstElement == null) {
+            System.out.println("Linked List Empty");
+        } else {
+            System.out.println("Popped the first element -> "+popFirstElement);
+        }
+        list1.show();
     }
 }
